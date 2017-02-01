@@ -33,4 +33,26 @@ class RomanNumeralCalculatorUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testAddOnePlusOne(){
+        
+        let app = XCUIApplication()
+        let iButton = app.buttons["I"]
+        let calculatedLabel = app.staticTexts["calculated_value"]
+        
+        //Tap I
+        iButton.tap()
+        XCTAssertEqual(calculatedLabel.label, "I")
+        
+        //Tap +
+        app.buttons["+"].tap()
+        
+        //Tap I
+        iButton.tap()
+        XCTAssertEqual(calculatedLabel.label, "II")
+        
+        //Tap II
+        iButton.tap()
+        
+    }
+    
 }
